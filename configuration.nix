@@ -1,8 +1,11 @@
-{ config, lib, pkgs, ... }:
-
 {
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
+  nix.settings.experimental-features = ["nix-command" "flakes"];
+
   networking.hostName = "wsl";
 
   time.timeZone = "Europe/Rome";
@@ -31,7 +34,6 @@
     home = "/home/andrea";
     shell = pkgs.fish;
     description = "Andrea Erario";
-    extraGroups = [ "wheel" "networkmanager" ];
+    extraGroups = ["wheel" "networkmanager"];
   };
 }
-

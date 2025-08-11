@@ -1,6 +1,8 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   home.username = "andrea";
   home.homeDirectory = "/home/andrea";
 
@@ -13,7 +15,7 @@
     neovim
     bat
     ranger
-  ]; 
+  ];
 
   programs.fish = {
     enable = true;
@@ -25,4 +27,3 @@
 
   home.stateVersion = "24.11";
 }
-
