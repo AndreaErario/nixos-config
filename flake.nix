@@ -8,6 +8,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
+    nvf.url = "github:notashelf/nvf";
   };
 
   outputs = {
@@ -15,6 +16,7 @@
     nixpkgs,
     home-manager,
     nixos-wsl,
+    nvf,
     ...
   } @ inputs: {
     nixosConfigurations.wsl = nixpkgs.lib.nixosSystem {
@@ -26,6 +28,7 @@
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
+          home-manager.sharedModules = [nvf.homeManagerModules.default];
 
           home-manager.users.andrea = import ./users/andrea;
         }

@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  inputs,
   ...
 }: {
   home.username = "andrea";
@@ -12,7 +13,6 @@
   };
 
   home.packages = with pkgs; [
-    neovim
     bat
     ranger
   ];

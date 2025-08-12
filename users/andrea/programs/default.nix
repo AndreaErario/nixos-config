@@ -6,5 +6,6 @@
   imports = [
     ./git.nix
     ./starship.nix
+    ./nvf.nix
   ];
 }
