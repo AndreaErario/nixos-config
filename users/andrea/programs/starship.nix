@@ -5,10 +5,11 @@
 }: {
   programs.starship = {
     enable = true;
+    enableBashIntegration = true;
     enableFishIntegration = true;
     settings = {
       add_newline = false;
-      format = "╭╴($git_branch$git_status)$python$directory$cmd_duration\n╰ $time $battery$username@$hostname $character";
+      format = "╭╴$nix_shell($git_branch$git_status)$python$directory$cmd_duration\n╰ $time $battery$username@$hostname $character";
 
       character = {
         disabled = false;
@@ -67,6 +68,10 @@
         style = "green";
         min_time = 1;
         format = "\\[[$duration]($style)\\]";
+      };
+      nix_shell = {
+        symbol = "❄️";
+        format = "\\[[$symbol $name]($style)\\]";
       };
     };
   };
