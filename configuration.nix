@@ -15,6 +15,7 @@
     htop
     fastfetch
     tree
+    usbutils
   ];
 
   services.openssh.enable = true;
@@ -36,4 +37,8 @@
     description = "Andrea Erario";
     extraGroups = ["wheel" "networkmanager"];
   };
+
+  services.udev.packages = with pkgs; [
+    platformio-core.udev
+  ];
 }

@@ -39,6 +39,7 @@
           wsl.enable = true;
           wsl.defaultUser = "andrea";
           wsl.startMenuLaunchers = true;
+          wsl.usbip.enable = true;
         }
       ];
     };
