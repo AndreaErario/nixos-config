@@ -14,9 +14,24 @@
           name = "tokyonight";
           style = "moon";
         };
+        ui = {
+          noice.enable = true;
+        };
+        statusline = {
+          lualine.enable = true;
+        };
         lsp = {
           enable = true;
           formatOnSave = true;
+        };
+        filetree = {
+          neo-tree.enable = true;
+        };
+        autocomplete = {
+          nvim-cmp.enable = true;
+        };
+        autopairs = {
+          nvim-autopairs.enable = true;
         };
         languages = {
           nix = {
@@ -29,6 +44,18 @@
             lsp.enable = true;
             treesitter.enable = true;
             extensions.markview-nvim.enable = true;
+          };
+          clang = {
+            enable = true;
+            lsp = {
+              enable = true;
+              server = "ccls";
+            };
+          };
+          python = {
+            enable = true;
+            format.enable = true;
+            lsp.enable = true;
           };
         };
       };
