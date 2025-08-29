@@ -24,9 +24,16 @@
           enable = true;
           formatOnSave = true;
         };
+        diagnostics = {
+          enable = true;
+          config = {
+            virtual_lines = true;
+          };
+        };
         filetree = {
           neo-tree.enable = true;
         };
+        telescope.enable = true;
         autocomplete = {
           nvim-cmp.enable = true;
         };
@@ -55,7 +62,10 @@
           python = {
             enable = true;
             format.enable = true;
-            lsp.enable = true;
+            lsp = {
+              enable = true;
+              server = "pyright";
+            };
           };
         };
       };
