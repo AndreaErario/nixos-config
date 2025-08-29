@@ -37,7 +37,7 @@
       };
       git_status = {
         disabled = false;
-        format = "([\\[$conflicted$deleted$renamed$modified$staged$untracked$ahead_behind\\]]($style))";
+        format = "([\\[[$conflicted$deleted$renamed$modified$staged$untracked$ahead_behind]($style)\\]](grey))";
       };
       directory = {
         disabled = false;
