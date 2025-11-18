@@ -42,5 +42,19 @@
         }
       ];
     };
+    nixosConfigurations.dell14s = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      modules = [
+        ./hosts/dell14s
+        
+        home-manager.nixosModules.home-manager
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.sharedModules = [nvf.homeManagerModules.default];
+          home-manager.users.andrea = import ./users/andrea;
+        }
+      ];
+    };
   };
 }
