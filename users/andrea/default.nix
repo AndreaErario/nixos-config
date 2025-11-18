@@ -11,9 +11,15 @@
     fish_greeting = "";
   };
 
+  home.pointerCursor = {
+    name = "capitaine-cursors";
+    package = pkgs.capitaine-cursors;
+    gtk.enable = true;
+  };
+
   home.packages = with pkgs; [
     bat
-    ranger
+    yazi
   ];
 
   programs.bash.enable = true;

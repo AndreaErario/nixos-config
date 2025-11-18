@@ -12,7 +12,9 @@
     ]
     ++ (
       if !headless
-      then []
+      then [
+        ./gtk.nix
+      ]
       else []
     );
 }
