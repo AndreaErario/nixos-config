@@ -18,7 +18,22 @@
 
   networking.networkmanager.enable = true;
 
+  powerManagement.enable = true;
+
   hardware.bluetooth.enable = true;
+
+  hardware.graphics.enable = true;
+
+  hardware.nvidia = {
+    modesetting.enable = true;
+    open = true;
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
+    prime = {
+      sync.enable = true;
+      intelBusId = "PCI:0:2:0";
+      nvidiaBusId = "PCI:1:00:0";
+    };
+  };
 
   time.timeZone = "Europe/Rome";
 
@@ -36,9 +51,12 @@
     LC_TIME = "it_IT.UTF-8";
   };
 
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "intl";
+  services.xserver = {
+    xkb = {
+      layout = "us";
+      variant = "intl";
+    };
+    videoDrivers = ["nvidia"];
   };
 
   services.greetd = {
@@ -57,10 +75,12 @@
 
   services.udisks2.enable = true;
 
+  services.tlp.enable = true;
+
   xdg.portal = {
     xdgOpenUsePortal = true;
     wlr.enable = true;
-    extraPortals = with pkgs; [xdg-desktop-portal-gtk];
+    extraPortals = with pkgs; [xdg-desktop-portal-gtk xdg-desktop-portal-gnome];
   };
 
   users.users.andrea = {
@@ -84,6 +104,7 @@
     htop
     mako
     udiskie
+    lshw
   ];
 
   programs.niri.enable = true;
