@@ -17,4 +17,17 @@
       ]
       else []
     );
+
+  home.packages = with pkgs;
+    [
+      bat
+      yazi
+    ]
+    ++ (
+      if !headless
+      then [
+        swaybg
+      ]
+      else []
+    );
 }

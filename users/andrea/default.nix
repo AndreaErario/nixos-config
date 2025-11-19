@@ -17,18 +17,13 @@
     gtk.enable = true;
   };
 
-  home.packages = with pkgs; [
-    bat
-    yazi
-  ];
-
   programs.bash.enable = true;
   programs.fish = {
     enable = true;
   };
 
   imports = [
-    ./programs
+    ./packages
   ];
 
   home.stateVersion = "24.11";
