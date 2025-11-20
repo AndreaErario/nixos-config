@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  inputs,
   ...
 }: {
   imports = [
@@ -77,7 +78,11 @@
 
   services.udisks2.enable = true;
 
-  services.tlp.enable = true;
+  # services.tlp.enable = true;
+
+  services.power-profiles-daemon.enable = true;
+
+  services.upower.enable = true;
 
   xdg.portal = {
     xdgOpenUsePortal = true;
@@ -99,7 +104,6 @@
     vim
     git
     alacritty
-    fuzzel
     firefox
     xwayland-satellite
     nautilus
@@ -107,10 +111,10 @@
     mako
     udiskie
     lshw
+    inputs.noctalia.packages.${system}.default
   ];
 
   programs.niri.enable = true;
-  programs.waybar.enable = true;
 
   programs.gnupg = {
     agent = {

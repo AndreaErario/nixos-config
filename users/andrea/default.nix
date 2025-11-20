@@ -17,6 +17,8 @@
     gtk.enable = true;
   };
 
+  home.file."/Images/Wallpapers/WALLPAPER.png".source = ./static/WALLPAPER.png;
+
   programs.bash.enable = true;
   programs.fish = {
     enable = true;

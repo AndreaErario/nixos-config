@@ -14,6 +14,7 @@
       if !headless
       then [
         ./gtk.nix
+        ./noctalia.nix
       ]
       else []
     );

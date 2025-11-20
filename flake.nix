@@ -12,6 +12,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nvf.url = "github:notashelf/nvf";
+    noctalia = {
+      url = "github:noctalia-dev/noctalia-shell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -20,6 +24,7 @@
     home-manager,
     nixos-wsl,
     nvf,
+    noctalia,
     ...
   } @ inputs: {
     nixosConfigurations.wsl = nixpkgs.lib.nixosSystem {
@@ -50,6 +55,7 @@
     };
     nixosConfigurations.dell14s = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
+      specialArgs = {inherit inputs;};
       modules = [
         ./hosts/dell14s
 
@@ -57,7 +63,12 @@
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.sharedModules = [nvf.homeManagerModules.default];
+          home-manager.backupFileExtension = "bak";
+          home-manager.overwriteBackup = true;
+          home-manager.sharedModules = [
+            nvf.homeManagerModules.default
+            noctalia.homeModules.default
+          ];
           home-manager.users.andrea = import ./users/andrea;
           home-manager.extraSpecialArgs = {
             headless = false;
