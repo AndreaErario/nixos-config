@@ -27,6 +27,9 @@
       if !headless
       then [
         swaybg
+        orca-slicer
+        discord
+        rnote
       ]
       else []
     );
