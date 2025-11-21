@@ -19,7 +19,10 @@
 
   networking.networkmanager.enable = true;
 
-  powerManagement.enable = true;
+  powerManagement = {
+    enable = true;
+    powertop.enable = true;
+  };
 
   hardware.bluetooth.enable = true;
 
@@ -78,9 +81,9 @@
 
   services.udisks2.enable = true;
 
-  # services.tlp.enable = true;
-
   services.power-profiles-daemon.enable = true;
+
+  services.thermald.enable = true;
 
   services.upower.enable = true;
 
