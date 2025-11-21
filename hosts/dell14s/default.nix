@@ -108,7 +108,6 @@
     xwayland-satellite
     nautilus
     htop
-    mako
     udiskie
     lshw
     inputs.noctalia.packages.${system}.default
