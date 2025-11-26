@@ -49,6 +49,8 @@
 
   hardware.opentabletdriver.enable = true;
 
+  hardware.logitech.wireless.enable = true;
+
   time.timeZone = "Europe/Rome";
 
   i18n.defaultLocale = "en_US.UTF-8";
@@ -125,6 +127,7 @@
     udiskie
     lshw
     inputs.noctalia.packages.${system}.default
+    kdePackages.okular
   ];
 
   programs.niri.enable = true;
@@ -138,6 +141,8 @@
   };
 
   programs.fish.enable = true;
+
+  programs.localsend.enable = true;
 
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono

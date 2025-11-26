@@ -23,6 +23,7 @@
     [
       bat
       yazi
+      lazygit
     ]
     ++ (
       if !headless
@@ -30,6 +31,8 @@
         orca-slicer
         discord
         rnote
+        solaar
+        logseq
       ]
       else []
     );
