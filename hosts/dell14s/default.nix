@@ -26,14 +26,22 @@
 
   hardware.bluetooth.enable = true;
 
-  hardware.graphics.enable = true;
+  hardware.graphics = {
+    enable = true;
+    extraPackages = with pkgs; [
+      intel-media-driver
+    ];
+  };
 
   hardware.nvidia = {
     modesetting.enable = true;
     open = true;
     package = config.boot.kernelPackages.nvidiaPackages.stable;
     prime = {
-      sync.enable = true;
+      offload = {
+        enable = true;
+        enableOffloadCmd = true;
+      };
       intelBusId = "PCI:0:2:0";
       nvidiaBusId = "PCI:1:00:0";
     };
@@ -62,7 +70,10 @@
       layout = "us";
       variant = "intl";
     };
-    videoDrivers = ["nvidia"];
+    videoDrivers = [
+      "modesetting"
+      "nvidia"
+    ];
   };
 
   services.greetd = {
