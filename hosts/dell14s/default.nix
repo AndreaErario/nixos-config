@@ -143,6 +143,7 @@
     lshw
     inputs.noctalia.packages.${system}.default
     kdePackages.okular
+    brightnessctl
     wireguard-tools
   ];
 
