@@ -32,6 +32,8 @@
 
   networking.networkmanager.enable = true;
 
+  networking.firewall.checkReversePath = "loose";
+
   powerManagement = {
     enable = true;
     powertop.enable = true;
@@ -139,6 +141,7 @@
     lshw
     inputs.noctalia.packages.${system}.default
     kdePackages.okular
+    wireguard-tools
   ];
 
   programs.niri.enable = true;
