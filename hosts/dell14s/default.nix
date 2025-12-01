@@ -113,6 +113,8 @@
 
   services.upower.enable = true;
 
+  services.gvfs.enable = true;
+
   xdg.portal = {
     xdgOpenUsePortal = true;
     wlr.enable = true;
