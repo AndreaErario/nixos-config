@@ -9,6 +9,7 @@
   home.sessionVariables = {
     EDITOR = "nvim";
     fish_greeting = "";
+    QT_QPA_PLATFORMTHEME = "gtk3";
   };
 
   home.pointerCursor = {
