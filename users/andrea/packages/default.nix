@@ -33,6 +33,7 @@
         rnote
         solaar
         logseq
+        yacreader
       ]
       else []
     );

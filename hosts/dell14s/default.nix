@@ -144,7 +144,9 @@
     inputs.noctalia.packages.${stdenv.hostPlatform.system}.default
     kdePackages.okular
     brightnessctl
+    playerctl
     wireguard-tools
+    vlc
   ];
 
   programs.niri.enable = true;
