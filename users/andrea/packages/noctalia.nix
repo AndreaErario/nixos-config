@@ -20,7 +20,15 @@
               id = "SystemMonitor";
             }
             {
-              id = "ActiveWindow";
+              id = "WiFi";
+              displayMode = "alwaysShow";
+            }
+            {
+              id = "Bluetooth";
+            }
+            {
+              id = "VPN";
+              displayMode = "alwaysShow";
             }
           ];
           right = [
