@@ -13,7 +13,8 @@
             {
               id = "ControlCenter";
               useDistroLogo = true;
-              colorizeDistroLogo = true;
+              enableColorization = true;
+              colorizeSystemIcon = true;
             }
             {
               id = "SystemMonitor";
@@ -50,9 +51,15 @@
         weatherEnabled = false;
       };
       wallpaper = {
-        defaultWallpaper = "/home/andrea/Images/Wallpapers/WALLPAPER.png";
+        directory = "/home/andrea/Images/Wallpapers";
       };
-      colorSchemes.useWallpaperColors = true;
+      colorSchemes = {
+        useWallpaperColors = true;
+        matugenSchemeType = "scheme-fidelity";
+      };
+      appLauncher = {
+        viewMode = "grid";
+      };
     };
   };
 }
