@@ -141,7 +141,7 @@
     htop
     udiskie
     lshw
-    inputs.noctalia.packages.${system}.default
+    inputs.noctalia.packages.${stdenv.hostPlatform.system}.default
     kdePackages.okular
     brightnessctl
     wireguard-tools
