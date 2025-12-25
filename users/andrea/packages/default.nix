@@ -15,6 +15,7 @@
       then [
         ./gtk.nix
         ./noctalia.nix
+        ./kitty.nix
       ]
       else []
     );
@@ -34,6 +35,8 @@
         solaar
         logseq
         yacreader
+        inkscape
+        freecad
       ]
       else []
     );

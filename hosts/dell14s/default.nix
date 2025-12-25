@@ -134,7 +134,7 @@
   environment.systemPackages = with pkgs; [
     vim
     git
-    alacritty
+    kitty
     firefox
     xwayland-satellite
     nautilus
@@ -147,6 +147,7 @@
     playerctl
     wireguard-tools
     vlc
+    fastfetch
   ];
 
   programs.niri.enable = true;
@@ -162,6 +163,8 @@
   programs.fish.enable = true;
 
   programs.localsend.enable = true;
+
+  programs.steam.enable = true;
 
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
