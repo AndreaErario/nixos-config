@@ -115,6 +115,16 @@
 
   services.gvfs.enable = true;
 
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    pulse.enable = true;
+    alsa = {
+      enable = true;
+      support32Bit = true;
+    };
+  };
+
   xdg.portal = {
     xdgOpenUsePortal = true;
     wlr.enable = true;
