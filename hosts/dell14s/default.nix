@@ -66,6 +66,8 @@
 
   hardware.logitech.wireless.enable = true;
 
+  hardware.keyboard.qmk.enable = true;
+
   time.timeZone = "Europe/Rome";
 
   i18n.defaultLocale = "en_US.UTF-8";
@@ -125,6 +127,14 @@
     };
   };
 
+  services.udev = {
+    enable = true;
+    packages = with pkgs; [
+      qmk-udev-rules
+      via
+    ];
+  };
+
   xdg.portal = {
     xdgOpenUsePortal = true;
     wlr.enable = true;
@@ -158,6 +168,8 @@
     wireguard-tools
     vlc
     fastfetch
+    qmk
+    via
   ];
 
   programs.niri.enable = true;
