@@ -178,6 +178,7 @@
 
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
+    roboto
   ];
 
   system.stateVersion = "25.05";

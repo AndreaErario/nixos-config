@@ -18,6 +18,7 @@
             }
             {
               id = "SystemMonitor";
+              showMemoryAsPercent = true;
             }
             {
               id = "WiFi";
@@ -31,6 +32,13 @@
               displayMode = "alwaysShow";
             }
           ];
+          center = [
+            {
+              id = "TaskbarGrouped";
+              hideUnoccupied = true;
+              labelMode = "none";
+            }
+          ];
           right = [
             {
               id = "Tray";
@@ -38,6 +46,7 @@
             {
               id = "Battery";
               displayMode = "alwaysShow";
+              warningThreshold = 20;
             }
             {
               id = "Volume";
@@ -57,9 +66,11 @@
       };
       location = {
         weatherEnabled = false;
+        firstDayOfWeek = 1;
       };
       wallpaper = {
         directory = "/home/andrea/Images/Wallpapers";
+        overviewEnabled = true;
       };
       colorSchemes = {
         useWallpaperColors = true;
@@ -67,6 +78,13 @@
       };
       appLauncher = {
         viewMode = "grid";
+      };
+      ui = {
+        fontDefault = "Roboto Medium";
+        fontFixed = "JetBrainsMono Nerd Font";
+      };
+      osd = {
+        enabledTypes = [0 1 2 3];
       };
     };
   };
