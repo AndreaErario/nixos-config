@@ -54,6 +54,7 @@
             }
             {
               id = "Clock";
+              usePrimaryColor = true;
             }
             {
               id = "NotificationHistory";
@@ -74,7 +75,7 @@
       };
       colorSchemes = {
         useWallpaperColors = true;
-        matugenSchemeType = "scheme-fidelity";
+        generationMethod = "content";
       };
       appLauncher = {
         viewMode = "grid";
