@@ -190,7 +190,7 @@
     brightnessctl
     playerctl
     wireguard-tools
-    vlc
+    mpv
     fastfetch
     qmk
     via

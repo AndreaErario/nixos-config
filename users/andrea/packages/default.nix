@@ -37,6 +37,7 @@
         yacreader
         inkscape
         freecad
+        blender
       ]
       else []
     );
