@@ -56,7 +56,7 @@
             enable = true;
             lsp = {
               enable = true;
-              server = "ccls";
+              servers = ["ccls"];
             };
           };
           python = {
@@ -64,7 +64,7 @@
             format.enable = true;
             lsp = {
               enable = true;
-              server = "pyright";
+              servers = ["pyright"];
             };
           };
         };
