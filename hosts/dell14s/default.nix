@@ -52,6 +52,10 @@
     modesetting.enable = true;
     open = true;
     package = config.boot.kernelPackages.nvidiaPackages.stable;
+    powerManagement = {
+      enable = true;
+      finegrained = true;
+    };
     prime = {
       offload = {
         enable = true;
@@ -109,7 +113,27 @@
 
   services.udisks2.enable = true;
 
-  services.power-profiles-daemon.enable = true;
+  # services.power-profiles-daemon.enable = true;
+  services.tlp = {
+    enable = true;
+    settings = {
+      CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
+      CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
+      CPU_ENERGY_PERF_POLICY_ON_SAV = "power";
+      PLATFORM_PROFILE_ON_AC = "performance";
+      PLATFORM_PROFILE_ON_BAT = "balanced";
+      PLATFORM_PROFILE_ON_SAV = "balanced";
+      CPU_BOOST_ON_AC = 1;
+      CPU_BOOST_ON_BAT = 0;
+      CPU_BOOST_ON_SAV = 0;
+      CPU_HWP_DYN_BOOST_ON_AC = 1;
+      CPU_HWP_DYN_BOOST_ON_BAT = 0;
+      CPU_HWP_DYN_BOOST_ON_SAV = 0;
+      RUNTIME_PM_DRIVER_DENYLIST = "mei_me";
+      SOUND_POWER_SAVE_ON_AC = 1;
+      SOUND_POWER_SAVE_ON_BAT = 1;
+    };
+  };
 
   services.thermald.enable = true;
 
