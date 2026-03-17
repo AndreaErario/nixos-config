@@ -99,13 +99,13 @@
     ];
   };
 
-  services.greetd = {
+  services.displayManager.ly = {
     enable = true;
     settings = {
-      default_session = {
-        command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --user-menu --cmd niri-session";
-        user = "greeter";
-      };
+      animation = "colormix";
+      battery_id = "BAT0";
+      bigclock = "en";
+      hide_version_string = true;
     };
   };
 
