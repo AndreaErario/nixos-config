@@ -10,5 +10,6 @@
       name = "Adwaita";
       package = pkgs.adwaita-icon-theme;
     };
+    gtk4.theme = null;
   };
 }

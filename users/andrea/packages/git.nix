@@ -14,6 +14,7 @@
     signing = {
       key = "42D080106CF8AB07";
       signByDefault = true;
+      format = "openpgp";
     };
   };
 }
