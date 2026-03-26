@@ -45,7 +45,7 @@
             }
             {
               id = "Battery";
-              displayMode = "alwaysShow";
+              displayMode = "graphic";
               warningThreshold = 20;
             }
             {
@@ -54,7 +54,7 @@
             }
             {
               id = "Clock";
-              usePrimaryColor = true;
+              clockColor = "primary";
             }
             {
               id = "NotificationHistory";
@@ -79,6 +79,7 @@
       };
       appLauncher = {
         viewMode = "grid";
+        overviewLayer = true;
       };
       ui = {
         fontDefault = "Roboto Medium";
