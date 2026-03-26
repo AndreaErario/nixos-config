@@ -37,7 +37,7 @@
         yacreader
         inkscape
         freecad
-        blender
+        (blender.override {cudaSupport = true;})
       ]
       else []
     );
