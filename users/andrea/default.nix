@@ -7,7 +7,7 @@
   home.homeDirectory = "/home/andrea";
 
   home.sessionVariables = {
-    EDITOR = "nvim";
+    EDITOR = "hx";
     fish_greeting = "";
     QT_QPA_PLATFORMTHEME = "gtk3";
   };
