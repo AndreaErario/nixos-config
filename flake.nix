@@ -32,21 +32,25 @@
 
         home-manager.nixosModules.home-manager
         {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.andrea = import ./users/andrea;
-          home-manager.extraSpecialArgs = {
-            headless = true;
+          home-manager = {
+            useGlobalPkgs = true;
+            useUserPackages = true;
+            users.andrea = import ./users/andrea;
+            extraSpecialArgs = {
+              headless = true;
+            };
           };
         }
 
         nixos-wsl.nixosModules.default
         {
           system.stateVersion = "24.11";
-          wsl.enable = true;
-          wsl.defaultUser = "andrea";
-          wsl.startMenuLaunchers = true;
-          wsl.usbip.enable = true;
+          wsl = {
+            enable = true;
+            defaultUser = "andrea";
+            startMenuLaunchers = true;
+            usbip.enable = true;
+          };
         }
       ];
     };
@@ -58,16 +62,18 @@
 
         home-manager.nixosModules.home-manager
         {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.backupFileExtension = "bak";
-          home-manager.overwriteBackup = true;
-          home-manager.sharedModules = [
-            noctalia.homeModules.default
-          ];
-          home-manager.users.andrea = import ./users/andrea;
-          home-manager.extraSpecialArgs = {
-            headless = false;
+          home-manager = {
+            useGlobalPkgs = true;
+            useUserPackages = true;
+            backupFileExtension = "bak";
+            overwriteBackup = true;
+            sharedModules = [
+              noctalia.homeModules.default
+            ];
+            users.andrea = import ./users/andrea;
+            extraSpecialArgs = {
+              headless = false;
+            };
           };
         }
       ];
