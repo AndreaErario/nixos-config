@@ -198,6 +198,7 @@
     fastfetch
     qmk
     via
+    qimgv
   ];
 
   programs.niri.enable = true;
