@@ -11,10 +11,6 @@
       url = "github:nix-community/NixOS-WSL/main";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nvf = {
-      url = "github:notashelf/nvf";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     noctalia = {
       url = "github:noctalia-dev/noctalia-shell";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -26,7 +22,6 @@
     nixpkgs,
     home-manager,
     nixos-wsl,
-    nvf,
     noctalia,
     ...
   } @ inputs: {
@@ -39,7 +34,6 @@
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.sharedModules = [nvf.homeManagerModules.default];
           home-manager.users.andrea = import ./users/andrea;
           home-manager.extraSpecialArgs = {
             headless = true;
@@ -69,7 +63,6 @@
           home-manager.backupFileExtension = "bak";
           home-manager.overwriteBackup = true;
           home-manager.sharedModules = [
-            nvf.homeManagerModules.default
             noctalia.homeModules.default
           ];
           home-manager.users.andrea = import ./users/andrea;

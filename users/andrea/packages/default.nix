@@ -8,7 +8,6 @@
     [
       ./git.nix
       ./starship.nix
-      ./nvf.nix
       ./helix.nix
     ]
     ++ (
