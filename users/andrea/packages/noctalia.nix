@@ -2,91 +2,47 @@
   config,
   pkgs,
   ...
-}: {
-  programs.noctalia-shell = {
+}: let
+  directory = "/home/andrea/Images/Wallpapers";
+  wallpaper = "/WALLPAPER.png";
+in {
+  programs.noctalia = {
     enable = true;
     settings = {
-      bar = {
-        density = "comfortable";
-        widgets = {
-          left = [
-            {
-              id = "ControlCenter";
-              useDistroLogo = true;
-              enableColorization = true;
-              colorizeSystemIcon = true;
-            }
-            {
-              id = "SystemMonitor";
-              showMemoryAsPercent = true;
-            }
-            {
-              id = "WiFi";
-              displayMode = "alwaysShow";
-            }
-            {
-              id = "Bluetooth";
-            }
-            {
-              id = "VPN";
-              displayMode = "alwaysShow";
-            }
-          ];
-          center = [
-            {
-              id = "TaskbarGrouped";
-              hideUnoccupied = true;
-              labelMode = "none";
-            }
-          ];
-          right = [
-            {
-              id = "Tray";
-            }
-            {
-              id = "Battery";
-              displayMode = "graphic";
-              warningThreshold = 20;
-            }
-            {
-              id = "Volume";
-              displayMode = "alwaysShow";
-            }
-            {
-              id = "Clock";
-              clockColor = "primary";
-            }
-            {
-              id = "NotificationHistory";
-            }
-          ];
-        };
+      bar.default = {
+        background_opacity = 0.80;
+        capsule = true;
+        margin_ends = 10;
+        margin_edge = 5;
+        start = ["control-center" "cpu" "temp" "ram" "network" "bluetooth"];
+        center = ["launcher" "workspaces" "clipboard"];
+        end = ["tray" "volume" "brightness" "battery" "clock" "notifications" "session"];
       };
-      dock = {
-        enabled = false;
+      widget = {
+        tray.drawer = true;
+      };
+      shell = {
+        panel = {
+          open_near_click_control_center = true;
+        };
+        font_family = "JetBrainsMono NF";
       };
       location = {
-        weatherEnabled = false;
-        firstDayOfWeek = 1;
+        auto_locate = true;
       };
       wallpaper = {
-        directory = "/home/andrea/Images/Wallpapers";
-        overviewEnabled = true;
+        directory = "${directory}";
+        default = "${directory} + ${wallpaper}";
       };
-      colorSchemes = {
-        useWallpaperColors = true;
-        generationMethod = "content";
+      backdrop = {
+        enabled = true;
       };
-      appLauncher = {
-        viewMode = "grid";
-        overviewLayer = true;
+      theme = {
+        mode = "dark";
+        source = "wallpaper";
       };
-      ui = {
-        fontDefault = "Roboto Medium";
-        fontFixed = "JetBrainsMono Nerd Font";
-      };
-      osd = {
-        enabledTypes = [0 1 2 3];
+      control_center = {
+        sidebar_section = "none";
       };
     };
   };
