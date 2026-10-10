@@ -38,6 +38,8 @@
         inkscape
         freecad
         (blender.override {cudaSupport = true;})
+        proton-vpn
+        heroic
       ]
       else []
     );
