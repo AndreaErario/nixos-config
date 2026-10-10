@@ -125,7 +125,6 @@
 
   services.udisks2.enable = true;
 
-  # services.power-profiles-daemon.enable = true;
   services.tlp = {
     enable = true;
     settings = {
@@ -165,6 +164,14 @@
     };
   };
 
+  services.netbird = {
+    enable = true;
+    clients.wt0 = {
+      port = 51821;
+      ui.enable = true;
+    };
+  };
+
   services.udev = {
     enable = true;
     packages = with pkgs; [
@@ -190,7 +197,7 @@
     isNormalUser = true;
     description = "Andrea Erario";
     shell = pkgs.fish;
-    extraGroups = ["networkmanager" "wheel"];
+    extraGroups = ["networkmanager" "wheel" "netbird-wt0"];
     packages = with pkgs; [];
   };
 
