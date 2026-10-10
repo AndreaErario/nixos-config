@@ -14,12 +14,19 @@ in {
         capsule = true;
         margin_ends = 10;
         margin_edge = 5;
-        start = ["control-center" "cpu" "temp" "ram" "network" "bluetooth"];
-        center = ["launcher" "workspaces" "clipboard"];
+        start = ["control-center" "cpu" "temp" "ram" "network" "bluetooth" "privacy"];
+        center = ["launcher" "taskbar" "clipboard"];
         end = ["tray" "volume" "brightness" "battery" "clock" "notifications" "session"];
       };
       widget = {
+        taskbar = {
+          focused_output_only = true;
+          group_by_workspace = true;
+          hide_empty_workspaces = true;
+        };
         tray.drawer = true;
+        privacy.hide_inactive = true;
+        network.vpn_status = "both";
       };
       shell = {
         panel = {
@@ -43,6 +50,9 @@ in {
       };
       control_center = {
         sidebar_section = "none";
+      };
+      battery = {
+        warning_threshold = 20;
       };
     };
   };
