@@ -179,6 +179,13 @@
     extraPortals = with pkgs; [xdg-desktop-portal-gtk xdg-desktop-portal-gnome];
   };
 
+  swapDevices = [
+    {
+      device = "/var/lib/swapfile";
+      size = 4 * 1024;
+    }
+  ];
+
   users.users.andrea = {
     isNormalUser = true;
     description = "Andrea Erario";
