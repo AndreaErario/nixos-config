@@ -27,7 +27,14 @@
       "usbcore.autosuspend=120"
     ];
     loader = {
-      systemd-boot.enable = true;
+      limine = {
+        enable = true;
+        extraEntries = ''
+          /Windows
+            protocol: efi
+            path: boot():/EFI/Microsoft/Boot/bootmgfw.efi
+        '';
+      };
       efi.canTouchEfiVariables = true;
       timeout = null;
     };
