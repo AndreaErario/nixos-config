@@ -213,7 +213,7 @@
     htop
     udiskie
     lshw
-    inputs.noctalia.packages.${stdenv.hostPlatform.system}.default
+    noctalia
     kdePackages.okular
     brightnessctl
     playerctl
